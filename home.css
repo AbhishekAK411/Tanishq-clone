@@ -563,6 +563,10 @@
     padding-right: 15%;
 }
 
+.bottom-footer{
+    background-color: rgb(242,233,233);
+}
+
 .inner-bottom-footer{
     width: 95%;
     height: 100px;
