@@ -318,12 +318,29 @@
     display:none;
 }
 
+.collection-desc:hover{
+    justify-content: end;
+}
+
+.collection-desc:hover .right{
+    /* border: 1px solid red; */
+    width: 100%;
+    justify-content: end;
+}
+
+.collection-desc:hover .right .right1{
+    margin-right: 83%;
+    /* border: 1px solid blue; */
+    transition: 0.5s;
+    
+}
+
 .collection-1:hover p{
     color: rgb(131,39,41);
 }
 
 .collection-1:hover .icon{
-    margin-left: 500%;
+    /* margin-left: 500%; */
     transition: 0.5s;
     color: rgb(131,39,41);
 }
