@@ -48,7 +48,43 @@
 
 .user-info-field{
     display: flex;
-    margin-top: 15%;
+    margin-top: 7%;
+}
+
+.password-info-field fieldset{
+    width: 110px;
+    height: 70px;
+    /* margin-top: 10%; */
+    margin-left: 2%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.password-info-field legend{
+    font-size: 0.8em;
+    margin-left: 10%;
+    color: rgb(144,142,138);
+}
+
+.password-info-field p{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.password-info-field input{
+    width: 368px;
+    height: 63px;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 20px;
+}
+
+.password-info-field ::placeholder{
+    font-size: 1.2em;
 }
 
 .user-info-field fieldset{

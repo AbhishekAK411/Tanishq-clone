@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://kit.fontawesome.com/3f39309145.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -8,40 +9,51 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="loginSignup.css">
 </head>
+
 <body>
     <div id="screen">
         <div class="border-box">
             <div class="user-info">
                 <div class="UI-inner-box">
                     <div class="user-head">
-                        <h1>Login or Signup</h1>
+                        <h1>Login</h1>
                     </div>
-                    <div class="user-info-field">
-                        <fieldset>
-                            <legend>Code</legend>
-                            <p>+91 <i class="fa-solid fa-angle-down"></i></p>
-                        </fieldset>
-                        <input type="text" placeholder="Enter Mobile Number">
-                    </div>
+                    <form onsubmit="login(event)">
+                        <div class="user-info-field">
+                            <fieldset>
+                                <legend>Code</legend>
+                                <p>+91 <i class="fa-solid fa-angle-down"></i></p>
+                            </fieldset>
+                            <input id="tanishq_login_email" type="email" placeholder="Enter Email Address">
+                        </div>
 
+                        <div class="password-info-field">
+                            <input id="tanishq_login_password" type="password" placeholder="Enter Password">
+                        </div>
+                    </form>
 
                     <div class="check-box">
-                        <input type="checkbox"><p>Remember Me</p>
+                        <input type="checkbox">
+                        <p>Remember Me</p>
                     </div>
                     <div class="policy">
                         <p>By Continuing, I agree to <u>Terms of Use</u> & <u>Privacy Policy</u></p>
                     </div>
                     <div class="button">
-                        <button>Request OTP</button>
+                        <button onclick="login(event)">Login</button>
                     </div>
                 </div>
             </div>
 
 
             <div class="image">
-                <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/a174d444-2b49-4ed2-9e28-d29a4e52165d/desktop/7.png?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-a174d444-2b49-4ed2-9e28-d29a4e52165d-desktop-o2OWQtw" alt="" />
+                <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/a174d444-2b49-4ed2-9e28-d29a4e52165d/desktop/7.png?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-a174d444-2b49-4ed2-9e28-d29a4e52165d-desktop-o2OWQtw"
+                    alt="" />
             </div>
         </div>
     </div>
+
+    <script src="./tanishq.js"></script>
 </body>
+
 </html>

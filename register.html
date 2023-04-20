@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://kit.fontawesome.com/3f39309145.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -8,6 +9,7 @@
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="loginSignup.css">
 </head>
+
 <body>
     <div id="screen">
         <div class="border-box">
@@ -17,40 +19,46 @@
                         <h1>Register</h1>
                     </div>
 
-                    
-                    <div class="register-info-field">
-                        <fieldset>
-                            <legend>Code</legend>
-                            <p>+91 <i class="fa-solid fa-angle-down"></i></p>
-                        </fieldset>
-                        <input type="text" placeholder="Enter Mobile Number / Email Address">
-                    </div>
+                    <form onsubmit="register(event)">
+                        <div class="register-info-field">
+                            <fieldset>
+                                <legend>Code</legend>
+                                <p>+91 <i class="fa-solid fa-angle-down"></i></p>
+                            </fieldset>
+                            <input id="tanishq_email" type="email" placeholder="Enter Email Address">
+                        </div>
 
-                    <div class="register-password-field">
-                        <input type="password" placeholder="Enter Password">
-                    </div>
+                        <div class="register-password-field">
+                            <input id="tanishq_password" type="password" placeholder="Enter Password">
+                        </div>
 
-                    <div class="register-password-field">
-                        <input type="password" placeholder="Confirm Password">
-                    </div>
+                        <div class="register-password-field">
+                            <input id="tanishq_confirm_password" type="password" placeholder="Confirm Password">
+                        </div>
 
-                    <div class="check-box-register">
-                        <input type="checkbox"><p>Remember Me</p>
-                    </div>
-                    <div class="policy">
-                        <p>By Continuing, I agree to <u>Terms of Use</u> & <u>Privacy Policy</u></p>
-                    </div>
+                        <div class="check-box-register">
+                            <input type="checkbox">
+                            <p>Remember Me</p>
+                        </div>
+                        <div class="policy">
+                            <p>By Continuing, I agree to <u>Terms of Use</u> & <u>Privacy Policy</u></p>
+                        </div>
+                    </form>
                     <div class="button">
-                        <button>Submit</button>
+                        <button onclick="register(event)">Submit</button>
                     </div>
                 </div>
             </div>
 
 
             <div class="image">
-                <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/a174d444-2b49-4ed2-9e28-d29a4e52165d/desktop/7.png?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-a174d444-2b49-4ed2-9e28-d29a4e52165d-desktop-o2OWQtw" alt="" />
+                <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/a174d444-2b49-4ed2-9e28-d29a4e52165d/desktop/7.png?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-a174d444-2b49-4ed2-9e28-d29a4e52165d-desktop-o2OWQtw"
+                    alt="" />
             </div>
         </div>
     </div>
+
+    <script src="./tanishq.js"></script>
 </body>
+
 </html>
