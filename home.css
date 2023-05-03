@@ -87,6 +87,10 @@
     align-self: center;
 }
 
+.stores button{
+    margin-left: 20%;
+}
+
 .stores img{
     width: 30%;
     height: 30%;
@@ -100,6 +104,16 @@
     /* font-weight: bold; */
     color: rgb(131,39,41);
     text-align: center;
+}
+
+.logout_button{
+    border: none;
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+    color: rgb(131,39,41);
+    font-size: 1em;
+    
 }
 
 .main{
