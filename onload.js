@@ -1,6 +1,14 @@
 window.onload = function (){
     var tanishq_currentUser = JSON.parse(localStorage.getItem("tanishq_current_user"));
-    console.log(tanishq_currentUser);
+
+    var ls = JSON.parse(localStorage.getItem("product_list"));
+    var tanishqData = "";
+    var divToInsertProduct = document.getElementById("insert");
+
+    for(var i=0;i<ls.length;i++){
+        tanishqData += `<div class="multi-products-edit"><div class="product-image"><img src="${ls[i].tanishq_PImg}" alt="" /></div><div class="product-desc"><h4>${ls[i].tanishq_Pname}</h4><h4>₹${ls[i].tanishq_Pprice}</h4><span>Women | Pendant</span></div><div class="product-button"><button>Explore Now</button></div></div>`;
+        divToInsertProduct.innerHTML = tanishqData;
+    }
 
     if(!!tanishq_currentUser){
         var tanishq_div = document.getElementById("tanishq_current_user");
@@ -16,7 +24,7 @@ window.onload = function (){
         logout_div.innerHTML = button;
 
     } else {
-        alert("Current User absent");
+        console.log("Current User absent");
     }
     
 }
