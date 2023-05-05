@@ -108,10 +108,10 @@
                                 </div>
                             </div>
     
-                            <div class="prod-image-right">
-                                <div class="prod-image-specs-R">
+                            <div id="replace-image" class="prod-image-right">
+                                <!-- <div class="prod-image-specs-R">
                                     <img src="https://staticimg.titan.co.in/Mia/Catalog/552821DEUAAE29_1.jpg" alt="" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         
@@ -126,7 +126,7 @@
                     <div class="asset-id">
                         <p>552821DEUAAE29</p>
                     </div>
-                    <div class="asset-name">
+                    <div id="replace-text" class="asset-name">
                         <h2>14kt Rose Gold Drop Earrings With A Touch Of Purple</h2>
                     </div>
 
@@ -152,7 +152,7 @@
                         <p>From Kiss of Springs unique range of latest jewellery designs this distinctively styled set of drop earrings that has elegance written all over it.</p>
                     </div>
 
-                    <div class="asset-price">
+                    <div id="replace-price" class="asset-price">
                         <p>offer price</p>
                         <h1>₹ 18 011.00</h1>
                     </div>
@@ -313,5 +313,23 @@
 
 
     </div>
+
+
+    <script>
+        var current_product = JSON.parse(localStorage.getItem("tanishq_currentProduct"));
+
+        var divToAppendImage = document.getElementById("replace-image");
+        var imageStructure = `<div class="prod-image-specs-R"><img src="${current_product.tanishq_PImg}" alt="" /></div>`;
+        divToAppendImage.innerHTML = imageStructure;
+
+        var divToAppendText = document.getElementById("replace-text");
+        var textStructure = `<h2>${current_product.tanishq_Pname}</h2>`;
+        divToAppendText.innerHTML = textStructure;
+
+        var divToappendPrice = document.getElementById("replace-price");
+        var priceStructure = `<p>offer price</p> <h1>₹ ${current_product.tanishq_Pprice}.00/-</h1>`;
+        divToappendPrice.innerHTML = priceStructure;
+
+    </script>
 </body>
 </html>
