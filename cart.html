@@ -306,7 +306,7 @@
                                                 <p>Delivery Charge</p>
                                                 <p>FREE</p>
                                             </div>
-                                            <div class="total">
+                                            <div id="replace-totalPrice-bill" class="total">
                                                 <h4>TOTAL <span>(Incl. of all taxes.)</span></h4>
                                                 <p>₹ 109274</p>
                                             </div>
@@ -491,6 +491,12 @@
                     </div>
                 </div>`;
         divToUpdatePrice.innerHTML = priceStructure;
+
+
+        var divToUpdatePriceBill = document.getElementById("replace-totalPrice-bill");
+        var priceBillStructure = `<h4>TOTAL <span>(Incl. of all taxes.)</span></h4>
+                                                <p>₹ ${sumToAddProducts}</p>`;
+        divToUpdatePriceBill.innerHTML = priceBillStructure;
             
             
         }
