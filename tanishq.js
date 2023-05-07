@@ -4,6 +4,7 @@ function register(event){
     var t_email = document.getElementById("tanishq_email").value;
     var t_password = document.getElementById("tanishq_password").value;
     var t_confirmPassword = document.getElementById("tanishq_confirm_password").value;
+    var cartProducts = [];
     
 
     if(t_email && t_password && t_confirmPassword){
@@ -18,7 +19,7 @@ function register(event){
                     }
                 }
                 if(!flag){
-                    var tanishq_user_data = {userEmail: t_email, userPassword: t_password, userConfirmPassword: t_confirmPassword};
+                    var tanishq_user_data = {userEmail: t_email, userPassword: t_password, userConfirmPassword: t_confirmPassword, cartProducts};
                     tanishq_storage.push(tanishq_user_data);
                     localStorage.setItem("tanishq_users" , JSON.stringify(tanishq_storage));
                 } else {

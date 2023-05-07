@@ -50,8 +50,8 @@
         </div>
 
         <div class="bottom-bar">
-            <div class="bottom-bar-inner">
-                <div class="final-amount">
+            <div id="replace-totalPrice" class="bottom-bar-inner">
+                <!-- <div class="final-amount">
                     <p>Total (4 Items) : <b>₹ 109274</b></p>
                 </div>
                 <div class="final-button">
@@ -61,7 +61,7 @@
                     <div class="checkout">
                         <button>Proceed to Checkout</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -110,9 +110,8 @@
                 </div>
 
                 <div class="products-division">
-                    <div class="pd-left">
-
-                        <div class="item-desc">
+                    <div id="replace-cartItems" class="pd-left">
+                        <!-- <div class="item-desc">
                             <div class="i-image">
                                 <img src="https://staticimg.titan.co.in/Tanishq/Catalog/500063SLXAAC02_1.jpg" alt="" />
                             </div>
@@ -254,7 +253,7 @@
                                     <i class="fa-regular fa-trash-can fa-lg"></i>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
 
@@ -407,5 +406,85 @@
         </div>
 
     </div>
+
+    <script>
+        window.onload = () =>{
+            var tanishq_currentuser = JSON.parse(localStorage.getItem("tanishq_current_user"));
+            var tanishq_userData = JSON.parse(localStorage.getItem("tanishq_users"));
+            var divToAppendProducts = document.getElementById("replace-cartItems");
+            var tanishq_cartProducts;
+
+            for(var i=0;i<tanishq_userData.length;i++){
+                if(tanishq_currentuser.userEmail == tanishq_userData[i].userEmail){
+                    tanishq_cartProducts = tanishq_userData[i].cartProducts;
+                }
+            }
+
+            var finalData = "";
+
+            for(var i=0;i<tanishq_cartProducts.length;i++){
+                finalData += `<div class="item-desc">
+                            <div class="i-image">
+                                <img src="${tanishq_cartProducts[i].tanishq_PImg}" alt="" />
+                            </div>
+                            <div class="i-desc">
+                                <div class="desc-head">
+                                    <h2>${tanishq_cartProducts[i].tanishq_Pname}</h2>
+                                    <p>500063SLXAAC022JA000033</p>
+                                </div>
+                                <div class="desc-cost">
+                                    <h2>₹ ${tanishq_cartProducts[i].tanishq_Pprice}</h2>
+                                </div>
+                                <div class="desc-msg">
+                                    <input type="checkbox" />
+                                    <p>Add Gift Message</p>
+                                </div>
+                            </div>
+                            <div class="i-quantity">
+                                <div class="q-top">
+                                    <div class="minus">
+                                        <i class="fa-solid fa-circle-minus fa-2x"></i>
+                                    </div>
+                                    <div class="quant">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="plus">
+                                        <i class="fa-solid fa-circle-plus fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="q-bottom">
+                                    <i class="fa-regular fa-heart fa-lg"></i>
+                                    <i class="fa-regular fa-trash-can fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>`;
+            }
+
+            divToAppendProducts.innerHTML = finalData;
+
+
+            var divToUpdatePrice = document.getElementById("replace-totalPrice");
+            var sumToAddProducts = 0;
+
+            for(var i=0;i<tanishq_cartProducts.length;i++){
+                sumToAddProducts += parseInt(tanishq_cartProducts[i].tanishq_Pprice);
+            }
+            
+            var priceStructure = `<div class="final-amount">
+                    <p>Total (4 Items) : <b>₹ ${sumToAddProducts}</b></p>
+                </div>
+                <div class="final-button">
+                    <div class="cont-shop">
+                        <button>Continue Shopping</button>
+                    </div>
+                    <div class="checkout">
+                        <button>Proceed to Checkout</button>
+                    </div>
+                </div>`;
+            divToUpdatePrice.innerHTML = priceStructure;
+            
+            
+        }
+    </script>
 </body>
 </html>
